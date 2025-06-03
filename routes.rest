@@ -1,0 +1,67 @@
+### COURSES API (LOCALHOST)
+
+# Get all Courses
+GET http://localhost:8080/courses
+
+### Get course by ID
+GET http://localhost:8080/courses/683efcea197101b268955e95
+
+### Create course (POST, no trailing slash, correct Content-Type)
+POST http://localhost:8080/courses
+Content-Type: application/json
+
+{
+  "coursesTitle": "Web Services",
+  "courseId": "CSE-341",
+  "instructor": "Shawn Porter",
+  "classMax": "80",
+  "currentEnrollment": "30",
+  "startDate": "any",
+  "endDate": "any"
+}
+
+### Update course by ID (PUT, correct Content-Type)
+PUT http://localhost:8080/courses/683efe7b197101b268955e96
+Content-Type: application/json
+
+{
+  "coursesTitle": "Web Fronted Dev-i",
+  "courseId": "WDD-321",
+  "instructor": "Porter Porter",
+  "classMax": "60",
+  "currentEnrollment": "40",
+  "startDate": "any",
+  "endDate": "any"
+}
+
+### Update course by ID (example for a second course)
+PUT http://localhost:8080/courses/683efff2197101b268955e97
+Content-Type: application/json
+
+{
+  "coursesTitle": "Web Frontend Dev-ii",
+  "courseId": "WDD-330",
+  "instructor": "Porter Porter",
+  "classMax": "40",
+  "currentEnrollment": "30",
+  "startDate": "any",
+  "endDate": "any"
+}
+
+### Update course by ID (example for a second course)
+PUT http://localhost:8080/courses/683f0118197101b268955e98
+Content-Type: application/json
+
+{
+  "coursesTitle": "Web Frontend Dev-ii",
+  "courseId": "WDD-330",
+  "instructor": "Porter Porter",
+  "classMax": "40",
+  "currentEnrollment": "30",
+  "startDate": "any",
+  "endDate": "any"
+}
+
+
+### Delete course by ID
+DELETE http://localhost:8080/courses/683f02a2197101b268955e99

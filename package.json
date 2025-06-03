@@ -1,0 +1,28 @@
+{
+  "name": "cse-341-students-courses-api",
+  "version": "1.0.0",
+  "description": "Node.js + MongoDB REST API for managing students and courses.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freedombyu/CSE-341-students-courses.git"
+  },
+  "author": "\"Freedom Mukanza\",",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freedombyu/CSE-341-students-courses/issues"
+  },
+  "homepage": "https://github.com/freedombyu/CSE-341-students-courses#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.16.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
