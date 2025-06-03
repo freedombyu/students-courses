@@ -1,4 +1,3 @@
-// Course model shape (for reference/documentation)
 module.exports = {
   coursesTitle: 'string',
   courseId: 'string',

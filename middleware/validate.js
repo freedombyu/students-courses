@@ -1,4 +1,3 @@
-// Validation middleware generator
 module.exports = function validate(validatorFn) {
   return (req, res, next) => {
     const errors = validatorFn(req.body);

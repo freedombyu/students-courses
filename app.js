@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
+const cors = require('cors'); 
 const swaggerUi = require('swagger-ui-express');
 const db = require('./data/database');
 const swaggerDocument = require('./swagger');
@@ -12,6 +13,7 @@ const app = express();
 const port = 8080;
 
 // Middleware
+app.use(cors()); 
 app.use(bodyParser.json());
 
 // API Documentation
