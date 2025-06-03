@@ -13,9 +13,9 @@ const initDb = (callback) => {
   if (!url) {
     return callback(new Error('MONGODB_URL environment variable not set!'));
   }
-  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+  MongoClient.connect(url)
     .then((client) => {
-      _db = client.db(); // get the default DB from the connection string
+      _db = client.db(); 
       console.log('Database initialized!');
       callback(null, _db);
     })
@@ -28,7 +28,7 @@ const getDatabase = () => {
   if (!_db) {
     throw Error('Database not initialized');
   }
-  return _db;
+  return _db; 
 };
 
 module.exports = {

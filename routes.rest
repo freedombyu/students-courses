@@ -7,7 +7,7 @@ GET http://localhost:8080/courses
 GET http://localhost:8080/courses/683efcea197101b268955e95
 
 ### Create course (POST, no trailing slash, correct Content-Type)
-POST http://localhost:8080/courses
+POST http://localhost:8080/courses HTTP/1.1
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
   "endDate": "any"
 }
 
-### Update course by ID (PUT, correct Content-Type)
+### PUT course 
 PUT http://localhost:8080/courses/683efe7b197101b268955e96
 Content-Type: application/json
 
@@ -35,7 +35,7 @@ Content-Type: application/json
 }
 
 ### Update course by ID (example for a second course)
-PUT http://localhost:8080/courses/683efff2197101b268955e97
+PUT http://localhost:8080/courses/683efff2197101b268955e97 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -64,4 +64,4 @@ Content-Type: application/json
 
 
 ### Delete course by ID
-DELETE http://localhost:8080/courses/683f02a2197101b268955e99
+DELETE http://localhost:8080/courses/683f13d6921bdf7171ac1c87

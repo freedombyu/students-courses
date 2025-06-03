@@ -3,7 +3,7 @@ const { ObjectId } = require('mongodb');
 
 const getAll = async (req, res) => {
   try {
-    const result = await mongodb.getDatabase().db().collection('courses').find();
+    const result = await mongodb.getDatabase().collection('courses').find();
     const courses = await result.toArray();
     res.status(200).json(courses);
   } catch (err) {
@@ -14,7 +14,7 @@ const getAll = async (req, res) => {
 const getSingle = async (req, res) => {
   try {
     const courseId = new ObjectId(req.params.id);
-    const course = await mongodb.getDatabase().db().collection('courses').findOne({ _id: courseId });
+    const course = await mongodb.getDatabase().collection('courses').findOne({ _id: courseId });
     if (!course) return res.status(404).json({ error: 'Course not found' });
     res.status(200).json(course);
   } catch (err) {
@@ -33,7 +33,7 @@ const createCourse = async (req, res) => {
       startDate: req.body.startDate,
       endDate: req.body.endDate
     };
-    const response = await mongodb.getDatabase().db().collection('courses').insertOne(course);
+    const response = await mongodb.getDatabase().collection('courses').insertOne(course);
     if (response.acknowledged && response.insertedId) {
       res.status(201).json({ id: response.insertedId });
     } else {
@@ -56,7 +56,7 @@ const updateCourse = async (req, res) => {
       startDate: req.body.startDate,
       endDate: req.body.endDate
     };
-    const response = await mongodb.getDatabase().db().collection('courses').replaceOne({ _id: courseIdObj }, course);
+    const response = await mongodb.getDatabase().collection('courses').replaceOne({ _id: courseIdObj }, course);
     if (response.modifiedCount > 0) {
       res.status(204).send();
     } else {
@@ -70,7 +70,7 @@ const updateCourse = async (req, res) => {
 const deleteCourse = async (req, res) => {
   try {
     const courseId = new ObjectId(req.params.id);
-    const response = await mongodb.getDatabase().db().collection('courses').deleteOne({ _id: courseId });
+    const response = await mongodb.getDatabase().collection('courses').deleteOne({ _id: courseId });
     if (response.deletedCount > 0) {
       res.status(204).send();
     } else {

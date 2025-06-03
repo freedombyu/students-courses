@@ -9,19 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/freedombyu/CSE-341-students-courses.git"
+    "url": "git+https://github.com/freedombyu/CSE-341-courses.git"
   },
   "author": "\"Freedom Mukanza\",",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/freedombyu/CSE-341-students-courses/issues"
+    "url": "https://github.com/freedombyu/CSE-341-courses/issues"
   },
-  "homepage": "https://github.com/freedombyu/CSE-341-students-courses#readme",
+  "homepage": "https://github.com/freedombyu/CSE-341-courses#readme",
   "dependencies": {
     "body-parser": "^2.2.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongodb": "^6.16.0",
+    "node": "^22.16.0",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
   }
