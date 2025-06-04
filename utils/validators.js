@@ -1,9 +1,10 @@
 function validateStudent(body) {
   const errors = [];
-  if (!body.name || typeof body.name !== 'string') errors.push('Name is required.');
+  if (!body.firstName || typeof body.firstName !== 'string') errors.push('firstName is required.');
+  if (!body.lastName || typeof body.lastName !== 'string') errors.push('lastName is required.');
   if (!body.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) errors.push('Valid email is required.');
-  if (!body.enrollmentNumber || typeof body.enrollmentNumber !== 'string') errors.push('Enrollment number is required.');
-  if (body.courses && !Array.isArray(body.courses)) errors.push('Courses must be an array of course IDs.');
+  if (!body.studentId || typeof body.studentId !== 'string') errors.push('studentId is required.');
+  if (body.enrolledCourses && !Array.isArray(body.enrolledCourses)) errors.push('enrolledCourses must be an array of course IDs.');
   return errors;
 }
 
