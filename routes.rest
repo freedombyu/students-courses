@@ -48,20 +48,5 @@ Content-Type: application/json
   "endDate": "any"
 }
 
-### Update course by ID (example for a second course)
-PUT http://localhost:8080/courses/683f0118197101b268955e98
-Content-Type: application/json
-
-{
-  "coursesTitle": "Web Frontend Dev-ii",
-  "courseId": "WDD-330",
-  "instructor": "Porter Porter",
-  "classMax": "40",
-  "currentEnrollment": "30",
-  "startDate": "any",
-  "endDate": "any"
-}
-
-
 ### Delete course by ID
 DELETE http://localhost:8080/courses/683f13d6921bdf7171ac1c87
