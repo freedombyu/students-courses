@@ -2,10 +2,14 @@ const express = require('express');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const cors = require('cors'); 
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const passport = require('./middleware/passport');
 const swaggerUi = require('swagger-ui-express');
 const db = require('./data/database');
 const swaggerDocument = require('./swagger');
 const routes = require('./routes');
+const authRoutes = require('./routes/auth');
 
 dotenv.config();
 
@@ -13,11 +17,24 @@ const app = express();
 const port = 8080;
 
 // Middleware
-app.use(cors()); 
+app.use(cors());
 app.use(bodyParser.json());
+
+// Session and Passport
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'your_session_secret',
+  resave: false,
+  saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: process.env.MONGODB_URL })
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // API Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+// Auth routes
+app.use('/auth', authRoutes);
 
 // Main routes
 app.use('/', routes);

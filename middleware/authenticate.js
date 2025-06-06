@@ -9,6 +9,9 @@ module.exports = function authenticate(req, res, next) {
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) return res.status(403).json({ error: 'Token invalid or expired' });
     req.user = user;
+    if (req.session.user === undefined){
+      return res.statuse(401).json("You do not have access.");
+    }
     next();
   });
 };
